@@ -87,8 +87,14 @@ To check running container in docker
 ```
 docker ps
 ```
-
+ 
 Tos stop docker conatiner
 ```
 docker stop <container_id>
+```
+
+
+No need to run pip insatall requirements.txt
+```
+python setup.py install
 ```
