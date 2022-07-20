@@ -98,3 +98,8 @@ No need to run pip insatall requirements.txt
 ```
 python setup.py install
 ```
+
+Install ipykernel for jupyter notebook
+```
+pip install ipykernel
+```
