@@ -1,6 +1,5 @@
 import os
 import sys
-from unittest.util import strclass
 
 class HousingException(Exception): #Inheriting Exception
     #err_message:Exception means that err_message will be a instance of Exception
@@ -17,9 +16,16 @@ class HousingException(Exception): #Inheriting Exception
     #Won't have self arg
     def get_detailed_error_message(err_message:Exception, err_detail:sys)->str:
         _, _, exec_tb = err_detail.exc_info() #exc_info - returns (type,value,traceback)
-        line_number = exec_tb.tb_frame.f_lineno
+        #line_number = exec_tb.tb_frame.f_lineno
+        exception_block_line_number = exec_tb.tb_frame.f_lineno
+        try_block_line_number = exec_tb.tb_lineno 
         file_name = exec_tb.tb_frame.f_code.co_filename
-        error_message = f"Error occured in File: [{file_name}] at Line number: [{line_number}] Error message: [{err_message}]"
+        error_message = f"""
+        Error occured in script: 
+        [ {file_name} ] at 
+        try block line number: [{try_block_line_number}] and exception block line number: [{exception_block_line_number}] 
+        error message: [{error_message}]
+        """
         return error_message
 
     def __str__(self):
