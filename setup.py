@@ -3,7 +3,7 @@ from typing import List
 
 #Declaring varible  for setup functions
 PROJECT_NAME="housing-predictor"
-VERSION="0.0.2" #Change Version if any new library is installed
+VERSION="0.0.3" #Change Version if any new library is installed
 AUTHOR="Anurag P Ekka"
 DESCRIPTION="My first ML project with CICD"
 PACKAGES=["housing"]
