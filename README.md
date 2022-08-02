@@ -104,10 +104,11 @@ Install ipykernel for jupyter notebook
 pip install ipykernel
 ```
 
-
+2 July
 Data Drift:
 When your datset stats gets change we call it as data drift
 
 
 
 ## Write a function to get training file path from artifact dir
+
