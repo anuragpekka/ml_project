@@ -102,7 +102,7 @@ celerybeat.pid
 *.sage.py
 
 #vscode settings
-.vscode
+*.vscode
 
 # Artifact 
 housing/artifact
