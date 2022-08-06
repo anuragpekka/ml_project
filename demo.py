@@ -7,8 +7,13 @@ from housing.logger import logging
 
 def main():
     try:
+        config_path = os.path.join("config","config.yaml")
+        pipeline = Pipeline(Configuration(config_file_path=config_path))
+        pipeline.start()
+        logging.info("main() function completed.")
+
         #configs = Configuration()
-        ''''
+        '''
         validation_config = configs.get_data_validation_config()
         print(f"validation_config: {validation_config}")
         '''
@@ -18,8 +23,9 @@ def main():
         #training_config = configs.get_model_trainer_config()
         #print(f"training_config: {training_config}")
 
-        pipe = Pipeline()
-        pipe.run_pipeline()
+        #pipe = Pipeline()
+        #pipe.run_pipeline()
+
 
     except Exception as e:
         logging.error(f"{e}")

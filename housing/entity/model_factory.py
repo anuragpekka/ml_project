@@ -77,11 +77,11 @@ def evaluate_regression_model(model_list: list, X_train:np.ndarray, y_train:np.n
             train_acc = r2_score(y_train, y_train_pred)
             test_acc = r2_score(y_test, y_test_pred)
             
-            #Calculating mean squared error on training and testing dataset
+            #Calculating Root mean squared error on training and testing dataset
             train_rmse = np.sqrt(mean_squared_error(y_train, y_train_pred))
             test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
 
-            # Calculating harmonic mean of train_accuracy and test_accuracy
+            # Calculating harmonic mean of train_accuracy and test_accuracy, like F1 accuracy
             model_accuracy = (2 * (train_acc * test_acc)) / (train_acc + test_acc)
             diff_test_train_acc = abs(test_acc - train_acc)
             
@@ -98,7 +98,7 @@ def evaluate_regression_model(model_list: list, X_train:np.ndarray, y_train:np.n
 
             #if model accuracy is greater than base accuracy and train and test score is within certain thershold
             #we will accept that model as accepted model
-            if model_accuracy >= base_accuracy and diff_test_train_acc < 0.05:
+            if model_accuracy >= base_accuracy and diff_test_train_acc < 0.05: #Put this in config file
                 base_accuracy = model_accuracy
                 metric_info_artifact = MetricInfoArtifact(model_name=model_name,
                                                         model_object=model,
