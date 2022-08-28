@@ -213,4 +213,4 @@ def render_log_dir(req_path):
 
 
 if __name__ == "__main__":
-    app.run() #Default port = 5000
+    app.run() #Default port = 5000 in local machine
